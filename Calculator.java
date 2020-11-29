@@ -117,14 +117,7 @@ public class Calculator {
 		btnC.setFont(new Font("Mangal", Font.PLAIN, 11));
 		btnC.setBounds(95, 93, 71, 33);
 		frmMartsCalculator.getContentPane().add(btnC);
-		
-		JButton btnNewButton_2 = new JButton("*");
-		btnNewButton_2.setForeground(new Color(255, 255, 255));
-		btnNewButton_2.setBackground(new Color(112, 128, 144));
-		btnNewButton_2.setFont(new Font("Mangal", Font.PLAIN, 11));
-		btnNewButton_2.setBounds(178, 93, 44, 33);
-		frmMartsCalculator.getContentPane().add(btnNewButton_2);
-		
+			
 		JButton btnNewButton_1 = new JButton("7");
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
 		btnNewButton_1.setBackground(new Color(112, 128, 144));
@@ -278,14 +271,9 @@ public class Calculator {
 		btnNewButton_15.setBounds(124, 273, 44, 33);
 		frmMartsCalculator.getContentPane().add(btnNewButton_15);
 		
-		JButton btnNewButton_13_1 = new JButton("/");
-		btnNewButton_13_1.setForeground(new Color(255, 255, 255));
-		btnNewButton_13_1.setBackground(new Color(112, 128, 144));
-		btnNewButton_13_1.setFont(new Font("Mangal", Font.PLAIN, 11));
-		btnNewButton_13_1.setBounds(178, 229, 44, 33);
-		frmMartsCalculator.getContentPane().add(btnNewButton_13_1);
 		
-		JLabel lblNewLabel = new JLabel("New label");
+		
+		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNewLabel.setBounds(167, 12, 55, 16);
 		frmMartsCalculator.getContentPane().add(lblNewLabel);
@@ -295,10 +283,10 @@ public class Calculator {
 		JButton btnNewButton_9 = new JButton("+");
 		btnNewButton_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lblNewLabel.setText(textDisplay.getText() + "+");
+				num = Double.parseDouble(textDisplay.getText());
 				calculation = 1;
+				lblNewLabel.setText(textDisplay.getText() + "+");
 				textDisplay.setText("");
-				num = Double.parseDouble(lblNewLabel.getText());
 				
 			}
 		});
@@ -312,20 +300,49 @@ public class Calculator {
 		JButton btnNewButton_5 = new JButton("-");
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lblNewLabel.setText(textDisplay.getText() + "-");
+				num = Double.parseDouble(textDisplay.getText());
 				calculation = 2;
+				lblNewLabel.setText(textDisplay.getText() + "-");
 				textDisplay.setText("");
-				num = Double.parseDouble(lblNewLabel.getText());
 				
 			}
 		});
+		
+		JButton btnNewButton_2 = new JButton("*");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				num = Double.parseDouble(textDisplay.getText());
+				calculation = 3;
+				lblNewLabel.setText(textDisplay.getText() + "*");
+				textDisplay.setText("");
+			}
+		});
+		btnNewButton_2.setForeground(new Color(255, 255, 255));
+		btnNewButton_2.setBackground(new Color(112, 128, 144));
+		btnNewButton_2.setFont(new Font("Mangal", Font.PLAIN, 11));
+		btnNewButton_2.setBounds(178, 93, 44, 33);
+		frmMartsCalculator.getContentPane().add(btnNewButton_2);
+		
 		btnNewButton_5.setForeground(new Color(255, 255, 255));
 		btnNewButton_5.setBackground(new Color(112, 128, 144));
 		btnNewButton_5.setFont(new Font("Mangal", Font.PLAIN, 11));
 		btnNewButton_5.setBounds(178, 138, 44, 33);
 		frmMartsCalculator.getContentPane().add(btnNewButton_5);
 		
-		
+		JButton btnNewButton_13_1 = new JButton("/");
+		btnNewButton_13_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				num = Double.parseDouble(textDisplay.getText());
+				calculation = 4;
+				lblNewLabel.setText(textDisplay.getText() + "/");
+				textDisplay.setText("");
+			}
+		});
+		btnNewButton_13_1.setForeground(new Color(255, 255, 255));
+		btnNewButton_13_1.setBackground(new Color(112, 128, 144));
+		btnNewButton_13_1.setFont(new Font("Mangal", Font.PLAIN, 11));
+		btnNewButton_13_1.setBounds(178, 229, 44, 33);
+		frmMartsCalculator.getContentPane().add(btnNewButton_13_1);
 	
 		
 	
